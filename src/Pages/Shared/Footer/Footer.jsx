@@ -16,7 +16,7 @@ const Footer = () => {
                     <img src={logo} alt="" />
                     <p>Graphic Design School Industries Ltd.<br />Providing reliable tech since </p>
                 </div>
-                <div className='text-white'>
+                <div >
                     <span className="footer-title">Services</span>
                     <Link to='/' className="link link-hover">Home</Link>
                     <Link to='/' className="link link-hover">Instructors</Link>
@@ -39,7 +39,7 @@ const Footer = () => {
                 </div>
 
             </footer>
-            <div className="bg-[#eceded] footer footer-center p-4 font-bold text-[#838F97]-content">
+            <div className="bg-[#D2D4E9] footer footer-center p-4 font-bold text-[#838F97]-content">
                 <p>Copyright © 2023 - All right reserved by Graphic Design School Ltd</p>
             </div>
         </div>

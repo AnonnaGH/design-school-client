@@ -1,18 +1,20 @@
+import logo from '../../../assets/Logo1.png'
 const NavBar = () => {
 
 
     const navOptions = <>
-        <li><a>Home</a></li>
-        <li><a>Instructors</a></li>
-        <li><a>Classes</a></li>
-        <li><a>Dashboard </a></li>
+        <li><a className="font-bold text-[#2B286D]">Home</a></li>
+        <li><a className="font-bold text-[#2B286D]">Instructors</a></li>
+        <li><a className="font-bold text-[#2B286D]">Classes</a></li>
+        <li><a className="font-bold text-[#2B286D]">Dashboard </a></li>
     </>
 
 
     return (
         <>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-[#DCDFF0]">
                 <div className="navbar-start">
+
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -21,7 +23,7 @@ const NavBar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <img src={logo} alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -29,7 +31,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Get started</a>
+                    <a className="btn bg-[#2B286D] text-white">Get started</a>
                 </div>
             </div>
         </>
