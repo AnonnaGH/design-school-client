@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-// import logo from '../../../assets/Logo.png'
+import logo from '../../../assets/Logo.png'
 
 const Footer = () => {
     return (
         <div>
             <footer
-                className="footer p-10 bg-[#91e9f0] text-base-content"
+                className="footer p-10 bg-[#2B2669] text-base-content text-white"
             // style={{
             //     // backgroundImage: 'url(https://i.ibb.co/bbQQ1Dg/footer.jpg)',
             //     backgroundSize: 'cover',
@@ -13,10 +13,10 @@ const Footer = () => {
             // }}
             >
                 <div >
-                    {/* <img src={logo} alt="" /> */}
+                    <img src={logo} alt="" />
                     <p>Graphic Design School Industries Ltd.<br />Providing reliable tech since </p>
                 </div>
-                <div>
+                <div className='text-white'>
                     <span className="footer-title">Services</span>
                     <Link to='/' className="link link-hover">Home</Link>
                     <Link to='/' className="link link-hover">Instructors</Link>
