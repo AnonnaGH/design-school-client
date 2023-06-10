@@ -28,12 +28,14 @@ const StudentsReview = () => {
 
     const renderReviews = () => {
         return studentReviews.map((review) => (
-            <div key={review.id} className="p-4">
-                <img src={review.photo} alt={review.name} className="w-12 h-12 rounded-full mb-4" />
-                <div className="flex items-center mb-2">
-                    <h3 className="text-lg font-bold">{review.name}</h3>
+            <div key={review.id} className='border  shadow-lg'>
+                <div className="p-4 ">
+                    <img src={review.photo} alt={review.name} className="w-12 h-12 rounded-full mb-4" />
+                    <div className="flex items-center mb-2">
+                        <h3 className="text-lg font-bold">{review.name}</h3>
+                    </div>
+                    <p className="text-gray-700">{review.review}</p>
                 </div>
-                <p className="text-gray-700">{review.review}</p>
             </div>
         ));
     };
@@ -51,11 +53,11 @@ const StudentsReview = () => {
             <div className="md:w-1/2 p-8">
                 <h2 className="text-2xl font-bold mb-4">What Our Students Say About Us</h2>
                 <p>
-                    Our students are very happy with the outstanding graphic design class! Our commitment to providing an exceptional learning experience in graphic design has left our students overjoyed and fulfilled. Let's delve into the reasons why our class has garnered such outstanding reviews:
+                    Our students are very happy with the outstanding graphic design class! Our commitment to providing an exceptional learning experience in graphic design has left our students overjoyed and fulfilled. Let us delve into the reasons why our class has garnered such outstanding reviews:
                 </p>
             </div>
             <div className="md:w-1/2 p-8">
-                <img src="https://i.ibb.co/cxfmkVb/4.png" alt="" />
+
                 <Slider {...settings}>{renderReviews()}</Slider>
             </div>
         </div>

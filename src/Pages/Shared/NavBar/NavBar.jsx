@@ -32,6 +32,7 @@ const NavBar = () => {
         <li><a className="font-bold text-[#2B286D]">Classes</a></li>
         <li><a className="font-bold text-[#2B286D]">Dashboard </a></li>
         <li><Link to="/login">Login</Link></li>
+        <li><Link to="/signup">Sign Up</Link></li>
     </>
 
 
