@@ -93,7 +93,6 @@ const Login = () => {
 
                         <div className="form-control mt-6">
                             <input
-                                disabled={false}
                                 className="btn  bg-blue-900 text-white hover:bg-blue-500"
                                 type="submit"
                                 value="Login"

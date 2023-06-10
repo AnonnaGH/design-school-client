@@ -51,7 +51,7 @@ const SignUp = () => {
                 <title>Online Graphic School | Sign Up</title>
             </Helmet>
 
-            <div className="w-full px-4 md:w-1/2 mx-auto border my-8 bg-[#DCDFF0]">
+            <div className="w-full px-4 md:w-3/4 mx-auto border my-8 bg-[#DCDFF0]">
                 <h1 className="text-3xl text-center my-4">Sign Up now!</h1>
                 <form
                     onSubmit={handleSubmit(onSubmit)}
@@ -169,7 +169,7 @@ const SignUp = () => {
 
 
 
-                    <div className="form-control mt-8 mx-auto col-span-2">
+                    <div className="form-control mt-8 mx-auto w-full col-span-2">
                         <input
                             disabled={false}
                             className="btn  bg-blue-900 text-white hover:bg-blue-500"
