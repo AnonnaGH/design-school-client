@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 const Login = () => {
@@ -101,8 +102,8 @@ const Login = () => {
                     </form>
 
 
-
                     <p className='px-6 text-sm text-center text-gray-400 mb-4'>
+                        <SocialLogin></SocialLogin>
                         Do not have an account yet?{' '}
                         <Link
                             to='/signup'
