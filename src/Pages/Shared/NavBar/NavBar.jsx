@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/Logo1.png'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 
 
@@ -26,11 +27,17 @@ const NavBar = () => {
     }, [theme]);
 
 
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
     const navOptions = <>
         <li><a className="font-bold text-[#2B286D]">Home</a></li>
         <li><a className="font-bold text-[#2B286D]">Instructors</a></li>
         <li><a className="font-bold text-[#2B286D]">Classes</a></li>
-        <li><a className="font-bold text-[#2B286D]">Dashboard </a></li>
+        <li><Link to="/dashboard">Dashboard</Link></li>
         <li><Link to="/login">Login</Link></li>
         <li><Link to="/signup">Sign Up</Link></li>
     </>
@@ -70,6 +77,33 @@ const NavBar = () => {
                         <svg className="swap-off fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
 
                     </label>
+
+                    {user?.email ? (
+                        <>
+                            <div className="avatar placeholder">
+                                <div className=" bg-neutral-focus text-neutral-content rounded-full w-8">
+                                    <img
+                                        src={user?.photoURL}
+                                        title={user.displayName}
+                                        alt="User image"
+                                    />
+                                </div>
+                            </div>
+                            <button onClick={handleLogOut} className="btn bg-[#2B2669] hover:bg-[#FEBF0F] text-white border-0 ml-2">
+                                Logout
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <button className="btn bg-[#2B2669]   border-0 ml  hover:bg-yellow-600 text-white font-bold hover:text-black">
+                                <Link to="/login">Login</Link>
+                            </button>
+                            <button className="btn  bg-[#2B2669]  text-white hover:bg-yellow-600  border-0 ml-2  font-bold dark:hover:text-white hover:text-black">
+                                <Link to="/signup">Sign Up</Link>
+                            </button>
+                        </>
+                    )}
+
                 </div>
             </div>
         </>
