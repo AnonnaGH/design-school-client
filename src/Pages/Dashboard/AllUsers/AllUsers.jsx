@@ -29,6 +29,26 @@ const AllUsers = () => {
             })
     }
 
+
+    const handleMakeInstructor = user => {
+        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is an Instructor Now!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
     return (
         <div className="w-full px-8">
             <Helmet>
@@ -59,7 +79,7 @@ const AllUsers = () => {
                                     <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-[#2B2669]  text-white"><FaUserShield></FaUserShield></button>
                                 }</td>
                                 <td>{user.role === 'instructor' ? 'Instructor' :
-                                    <button className="btn btn-ghost bg-[#2B2669]  text-white"><FaUserEdit></FaUserEdit></button>
+                                    <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost bg-[#2B2669]  text-white"><FaUserEdit></FaUserEdit></button>
                                 }</td>
                                 <td><button className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
                             </tr>)
