@@ -12,6 +12,7 @@ import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import MyBookedClasses from "../Pages/Dashboard/MyBookedClasses";
+import AllInstructor from "../Pages/AllInstructor/AllInstructor";
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: 'login',
                 element: <Login></Login>,
+            },
+            {
+                path: 'allinstructors',
+                element: <AllInstructor></AllInstructor>,
             },
             {
                 path: 'signup',

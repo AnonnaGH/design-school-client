@@ -34,8 +34,9 @@ const NavBar = () => {
             .catch(error => console.log(error));
     }
     const navOptions = <>
-        <li><a className="font-bold text-[#2B286D]">Home</a></li>
-        <li><a className="font-bold text-[#2B286D]">Instructors</a></li>
+
+        <li><Link className="font-bold text-[#2B286D]" to="/">Home</Link></li>
+        <li><Link className="font-bold text-[#2B286D]" to="/allinstructors">Instructors</Link></li>
         <li><Link className="font-bold text-[#2B286D]" to="/allclasses">All Classes</Link></li>
         <li><Link className="font-bold text-[#2B286D]" to="/dashboard">Dashboard</Link></li>
         <li><Link className="font-bold text-[#2B286D]" to="/login">Login</Link></li>
