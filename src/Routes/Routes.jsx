@@ -10,12 +10,14 @@ import AllClasses from "../Pages/AllClasses/AllClasses";
 import AdminManageClass from "../Pages/Dashboard/ManageClasses/AdminManageClass";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
