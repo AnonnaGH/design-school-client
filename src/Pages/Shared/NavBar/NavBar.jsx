@@ -36,10 +36,10 @@ const NavBar = () => {
     const navOptions = <>
         <li><a className="font-bold text-[#2B286D]">Home</a></li>
         <li><a className="font-bold text-[#2B286D]">Instructors</a></li>
-        <li><a className="font-bold text-[#2B286D]">Classes</a></li>
-        <li><Link to="/dashboard">Dashboard</Link></li>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/signup">Sign Up</Link></li>
+        <li><Link className="font-bold text-[#2B286D]" to="/allclasses">All Classes</Link></li>
+        <li><Link className="font-bold text-[#2B286D]" to="/dashboard">Dashboard</Link></li>
+        <li><Link className="font-bold text-[#2B286D]" to="/login">Login</Link></li>
+        <li><Link className="font-bold text-[#2B286D]" to="/signup">Sign Up</Link></li>
     </>
 
 

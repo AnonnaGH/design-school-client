@@ -38,7 +38,7 @@ const Dashboard = () => {
 
                             <li>
                                 <NavLink to="/dashboard/adminmanageclass">
-                                    <FaWallet /> Manage Items
+                                    <FaWallet /> Manage classes
                                 </NavLink>
                             </li>
                             <li>
@@ -103,8 +103,8 @@ const Dashboard = () => {
 
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
-                    <li><NavLink to="/menu"> Our Menu</NavLink></li>
-                    <li><NavLink to="/order/salad">Order Food</NavLink></li>
+                    <li><NavLink to="/allclasses"> All Classes</NavLink></li>
+                    <li><NavLink to="/instructors">Instructors</NavLink></li>
                 </ul>
 
 

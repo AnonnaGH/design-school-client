@@ -5,6 +5,11 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import Dashboard from "../Layout/Dashboard";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AddClass from "../Pages/Dashboard/AddClass/AddClass";
+import AllClasses from "../Pages/AllClasses/AllClasses";
+import AdminManageClass from "../Pages/Dashboard/ManageClasses/AdminManageClass";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 
 
 const router = createBrowserRouter([
@@ -24,6 +29,11 @@ const router = createBrowserRouter([
                 path: 'signup',
                 element: <SignUp></SignUp>,
             },
+            {
+                path: 'allclasses',
+                element: <AllClasses></AllClasses>,
+                loader: () => fetch('http://localhost:5000/classes')
+            },
 
         ]
 
@@ -37,8 +47,18 @@ const router = createBrowserRouter([
         children: [
             {
                 path: 'allusers',
-                element: <AllUsers></AllUsers>
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
             },
+            {
+                path: 'addclass',
+                element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
+            },
+            {
+                path: 'adminmanageclass',
+                element: <AdminManageClass></AdminManageClass>
+            },
+
+
         ]
     }
 ]);
