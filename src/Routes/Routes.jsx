@@ -13,6 +13,7 @@ import InstructorRoute from "./InstructorRoute";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import MyBookedClasses from "../Pages/Dashboard/MyBookedClasses";
 import AllInstructor from "../Pages/AllInstructor/AllInstructor";
+import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 
 
 const router = createBrowserRouter([
@@ -63,8 +64,13 @@ const router = createBrowserRouter([
             },
             {
                 path: 'adminmanageclass',
-                element: <AdminManageClass></AdminManageClass>
+                element: <AdminRoute><AdminManageClass></AdminManageClass></AdminRoute>
             },
+            {
+                path: 'manageclasses',
+                element: <ManageClasses></ManageClasses>
+            },
+
             {
                 path: 'mybookedclasses',
                 element: <MyBookedClasses></MyBookedClasses>
