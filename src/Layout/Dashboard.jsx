@@ -1,14 +1,24 @@
 import { FaBook, FaHome, FaUsers, FaWallet } from "react-icons/fa";
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
+import { AuthContext } from "../providers/AuthProvider";
+import { useContext } from "react";
+
+
 
 const Dashboard = () => {
-
+    const { user, logOut } = useContext(AuthContext);
     // const isAdmin = true;
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
     const isUser = !isAdmin && !isInstructor;
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -105,6 +115,9 @@ const Dashboard = () => {
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
                     <li><NavLink to="/allclasses"> All Classes</NavLink></li>
                     <li><NavLink to="/instructors">Instructors</NavLink></li>
+                    <li>
+                        <Link onClick={handleLogOut} >  Logout</Link>
+                    </li>
                 </ul>
 
 

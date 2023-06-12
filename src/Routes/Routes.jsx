@@ -16,6 +16,7 @@ import AllInstructor from "../Pages/AllInstructor/AllInstructor";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 import PrivateRoute from "./PrivateRoute";
 import PaymentHistory from "../Pages/Dashboard/Payment/PaymentHistory";
+import MyEnrolledClass from "../Pages/Dashboard/MyEnrolledClass";
 
 
 const router = createBrowserRouter([
@@ -82,6 +83,11 @@ const router = createBrowserRouter([
                 element: <AdminRoute><PaymentHistory></PaymentHistory></AdminRoute>,
                 loader: () => fetch('http://localhost:5000/payments')
             },
+            {
+                path: 'myenrolledclasses',
+                element: <MyEnrolledClass></MyEnrolledClass>
+
+            }
 
         ]
     }

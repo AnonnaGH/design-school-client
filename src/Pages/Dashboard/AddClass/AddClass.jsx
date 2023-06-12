@@ -131,10 +131,10 @@ const AddClass = () => {
                                 <option disabled>Pick One</option>
                                 <option>Logo Design</option>
                                 <option>Photo editing</option>
-                                <option>Ad image design</option>
-                                <option>Banner design</option>
-                                <option>Certificate Desin</option>
-                                <option>Pakaging Desin</option>
+                                <option>Ad image Design</option>
+                                <option>Banner Design</option>
+                                <option>Certificate Design</option>
+                                <option>Pakaging Design</option>
 
 
                             </select>

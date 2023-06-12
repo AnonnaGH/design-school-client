@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./CheckoutForm.css";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const CheckoutForm = ({ handleCloseModal, item }) => {
     const { user } = useAuth();
@@ -85,12 +86,13 @@ const CheckoutForm = ({ handleCloseModal, item }) => {
                 status: 'service pending',
 
             }
+
             axiosSecure.post('/payments', paymentInfo)
                 .then(res => {
                     console.log(res.data);
                     if (res.data.result.insertedId) {
                         // display confirm
-                        alert('Payment info added to DB')
+
                     }
                 })
         }
