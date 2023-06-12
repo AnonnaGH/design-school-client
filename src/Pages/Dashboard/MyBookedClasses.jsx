@@ -2,18 +2,44 @@ import { useState } from "react";
 import useBookedClass from "../../hooks/useBookedClass";
 import { FaTrashAlt } from "react-icons/fa";
 import { AiFillCloseCircle } from "react-icons/ai";
+import Swal from "sweetalert2";
 
 
 const MyBookedClasses = () => {
     const [bookedClass, refetch] = useBookedClass();
     const [selectedItemId, setSelectedItemId] = useState(null);
 
+    const handleDelete = (item) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/booked/${item._id}`, {
+                    method: "DELETE",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+                        }
+                    });
+            }
+        });
+    };
+
     const handleCloseModal = () => {
         setSelectedItemId(null);
     };
     return (
         <div>
-            <h1>Booked classes: {bookedClass.length}</h1>
+            <h1 className="text-3xl p-4 text-center">My Booked classes: {bookedClass.length}</h1>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
