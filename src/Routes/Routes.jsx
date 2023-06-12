@@ -15,6 +15,7 @@ import MyBookedClasses from "../Pages/Dashboard/MyBookedClasses";
 import AllInstructor from "../Pages/AllInstructor/AllInstructor";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 import PrivateRoute from "./PrivateRoute";
+import PaymentHistory from "../Pages/Dashboard/Payment/PaymentHistory";
 
 
 const router = createBrowserRouter([
@@ -76,7 +77,11 @@ const router = createBrowserRouter([
                 path: 'mybookedclasses',
                 element: <MyBookedClasses></MyBookedClasses>
             },
-
+            {
+                path: 'paymenthistory',
+                element: <AdminRoute><PaymentHistory></PaymentHistory></AdminRoute>,
+                loader: () => fetch('http://localhost:5000/payments')
+            },
 
         ]
     }

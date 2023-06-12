@@ -3,11 +3,16 @@ import useBookedClass from "../../hooks/useBookedClass";
 import { FaTrashAlt } from "react-icons/fa";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Swal from "sweetalert2";
+import { Elements } from "@stripe/react-stripe-js";
+
+import { loadStripe } from "@stripe/stripe-js";
+import CheckoutForm from "./Payment/CheckoutForm";
 
 
 const MyBookedClasses = () => {
     const [bookedClass, refetch] = useBookedClass();
     const [selectedItemId, setSelectedItemId] = useState(null);
+    const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 
     const handleDelete = (item) => {
         Swal.fire({
@@ -88,7 +93,7 @@ const MyBookedClasses = () => {
                                         className="modal modal-bottom sm:modal-middle"
                                         open
                                     >
-                                        <div method="dialog" className="modal-box">
+                                        <div method="dialog" className="modal-box bg-slate-100">
                                             <div className="flex justify-end">  <button
                                                 type="button"
                                                 className="btn btn-ghost"
@@ -97,15 +102,19 @@ const MyBookedClasses = () => {
                                                 <AiFillCloseCircle className="text-5xl"></AiFillCloseCircle>
                                             </button></div>
                                             <div className="mb-4">
-                                                <h3 className="font-bold text-lg">
-                                                    Course name: {item.name}
+                                                <h3 className="font-bold text-lg mb-4">
+                                                    <span className="text-bold"> Course name:</span> {item.name}
                                                 </h3>
                                                 <p>Instructor: {item.instructor}</p>
                                                 <p>Category: {item.category}</p>
-                                                <p>Number of Module: {item.module}</p>
                                                 <p>Price: $ {item.price}</p>
                                             </div>
-
+                                            <div className="border">
+                                                <Elements stripe={stripePromise}>
+                                                    <CheckoutForm handleCloseModal={handleCloseModal}
+                                                        item={item}></CheckoutForm>
+                                                </Elements>
+                                            </div>
 
                                             <div className="modal-action">
 
