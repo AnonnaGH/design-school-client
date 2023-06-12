@@ -14,6 +14,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import MyBookedClasses from "../Pages/Dashboard/MyBookedClasses";
 import AllInstructor from "../Pages/AllInstructor/AllInstructor";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
 
     {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute> <Dashboard></Dashboard> </PrivateRoute>,
         children: [
             {
                 path: 'allusers',
