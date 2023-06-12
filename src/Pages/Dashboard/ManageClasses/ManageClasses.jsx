@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 
 import useManageClasses from "../../../hooks/useManageClasses";
+import UpdateClass from "./UpdateClass";
 
 const ManageClasses = () => {
     const [classes, refetch] = useManageClasses()
@@ -95,7 +96,7 @@ const ManageClasses = () => {
                                     <button className="btn btn-ghost btn-xs">{item.feedback}</button>
                                 </td>
                                 <td>
-                                    <button onClick={() => setSelectedItemId(item._id)} className="btn btn-ghost btn-xs">Update</button>
+                                    <button onClick={() => setSelectedItemId(item._id)} className="btn btn-success btn-xs">Update</button>
                                     {selectedItemId === item._id && (
                                         <dialog
                                             id={item._id}
@@ -112,8 +113,9 @@ const ManageClasses = () => {
 
                                                 <div className="border">
 
-                                                    {/* <UpdateClass handleCloseModal={handleCloseModal}
-                                                        item={item}></UpdateClass> */}
+                                                    <UpdateClass handleCloseModal={handleCloseModal}
+                                                        item={item}></UpdateClass>
+
 
                                                 </div>
                                                 <div className="modal-action">
