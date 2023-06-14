@@ -1,0 +1,13 @@
+.thumbs-wrapper ul {
+    display: none;
+}
+
+.carousel .control-dots .dot {
+    background: #edeef2 !important;
+    height: 10px;
+    width: 10px;
+}
+
+.carousel-status {
+    display: none;
+}

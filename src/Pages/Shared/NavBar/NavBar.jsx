@@ -39,8 +39,7 @@ const NavBar = () => {
         <li><Link className="font-bold text-[#2B286D]" to="/allinstructors">Instructors</Link></li>
         <li><Link className="font-bold text-[#2B286D]" to="/allclasses">All Classes</Link></li>
         <li><Link className="font-bold text-[#2B286D]" to="/dashboard">Dashboard</Link></li>
-        <li><Link className="font-bold text-[#2B286D]" to="/login">Login</Link></li>
-        <li><Link className="font-bold text-[#2B286D]" to="/signup">Sign Up</Link></li>
+
     </>
 
 
@@ -96,12 +95,16 @@ const NavBar = () => {
                         </>
                     ) : (
                         <>
-                            <button className="btn bg-[#2B2669]   border-0 ml  hover:bg-yellow-600 text-white font-bold hover:text-black">
-                                <Link to="/login">Login</Link>
-                            </button>
-                            <button className="btn  bg-[#2B2669]  text-white hover:bg-yellow-600  border-0 ml-2  font-bold dark:hover:text-white hover:text-black">
-                                <Link to="/signup">Sign Up</Link>
-                            </button>
+
+                            <Link to="/login"><button className="btn bg-[#2B2669]   border-0 ml  hover:bg-yellow-600 text-white font-bold hover:text-black">
+                                Login
+                            </button></Link>
+
+
+                            <Link to="/signup"><button className="btn  bg-[#2B2669]  text-white hover:bg-yellow-600  border-0 ml-2  font-bold dark:hover:text-white hover:text-black">
+                                Sign Up
+                            </button></Link>
+
                         </>
                     )}
 

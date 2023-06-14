@@ -34,7 +34,7 @@ const StudentsReview = () => {
                     <div className="flex items-center mb-2">
                         <h3 className="text-lg font-bold">{review.name}</h3>
                     </div>
-                    <p className="text-gray-700">{review.review}</p>
+                    <p>{review.review}</p>
                 </div>
             </div>
         ));
@@ -49,16 +49,18 @@ const StudentsReview = () => {
     };
 
     return (
-        <div className="flex flex-col md:flex-row">
-            <div className="md:w-1/2 p-8">
-                <h2 className="text-2xl font-bold mb-4">What Our Students Say About Us</h2>
-                <p>
-                    Our students are very happy with the outstanding graphic design class! Our commitment to providing an exceptional learning experience in graphic design has left our students overjoyed and fulfilled. Let us delve into the reasons why our class has garnered such outstanding reviews:
-                </p>
-            </div>
-            <div className="md:w-1/2 p-8">
+        <div className="max-w-screen-xl mx-auto my-40">
+            <div className="flex flex-col md:flex-row">
+                <div className="md:w-1/2 p-8">
+                    <h2 className="text-2xl font-bold mb-4">What Our Students Say About Us</h2>
+                    <p>
+                        Our students are very happy with the outstanding graphic design class! Our commitment to providing an exceptional learning experience in graphic design has left our students overjoyed and fulfilled. Let us delve into the reasons why our class has garnered such outstanding reviews:
+                    </p>
+                </div>
+                <div className="md:w-1/2 p-8">
 
-                <Slider {...settings}>{renderReviews()}</Slider>
+                    <Slider {...settings}>{renderReviews()}</Slider>
+                </div>
             </div>
         </div>
     );

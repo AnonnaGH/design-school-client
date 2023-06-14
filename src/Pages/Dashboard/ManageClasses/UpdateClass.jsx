@@ -124,7 +124,7 @@ const UpdateClass = ({ handleCloseModal, item }) => {
 
                 <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">Language Category*</span>
+                        <span className="label-text">Category*</span>
                     </label>
                     <select
                         defaultValue={item.category}

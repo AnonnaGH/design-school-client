@@ -1,6 +1,5 @@
 
 import { Helmet } from 'react-helmet-async';
-import useBookedClass from '../../hooks/useBookedClass';
 import useEnrolledClass from '../../hooks/useEnrolledClass';
 
 
@@ -10,7 +9,7 @@ const MyEnrolledClass = () => {
     return (
         <div className="w-full px-8">
             <Helmet>
-                <title>Online Language School | Payment History</title>
+                <title>Online Graphic School | Payment History</title>
             </Helmet>
             <h3 className="text-3xl text-center font-semibold my-4 ">Total Payments: {enrolledClasses.length}</h3>
 

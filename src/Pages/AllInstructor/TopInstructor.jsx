@@ -18,15 +18,17 @@ const TopInstructors = () => {
     }, []);
 
     return (
-        <div>
-            <h2 className='text-3xl my-10 text-center'>Top Instructors</h2>
-            <div className='grid grid-cols-1 md:grid-cols-3'>
-                {topInstructors?.map((instructor, index) => (
-                    <TopInstructorCard
-                        key={index}
-                        instructor={instructor}
-                    />
-                ))}
+        <div className="max-w-screen-xl mx-auto my-40">
+            <div>
+                <h2 className='text-3xl my-10 text-center'>Top Instructors</h2>
+                <div className='grid md:grid-cols-3 gap-4'>
+                    {topInstructors?.map((instructor, index) => (
+                        <TopInstructorCard
+                            key={index}
+                            instructor={instructor}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );

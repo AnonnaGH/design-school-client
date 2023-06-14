@@ -8,7 +8,7 @@ const AllInstructor = () => {
     const [users] = useUsers();
     const instructors = users.filter(user => user.role === 'instructor')
     return (
-        <section>
+        <section className="max-w-screen-xl mx-auto my-10">
 
             <div className="grid md:grid-cols-3 gap-4">
                 {

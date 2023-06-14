@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import AboutUs from "../AboutUs/AboutUs";
 import StudentsReview from "../StudentsReview/StudentsReview";
 import TopInstructors from "../../AllInstructor/TopInstructor";
+import PopularClasses from "../PopularClasses/PopularClasses";
 
 
 const Home = () => {
@@ -13,8 +14,9 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <AboutUs></AboutUs>
-            <StudentsReview></StudentsReview>
             <TopInstructors></TopInstructors>
+            <PopularClasses></PopularClasses>
+            <StudentsReview></StudentsReview>
         </div>
     );
 };

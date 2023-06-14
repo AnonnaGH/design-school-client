@@ -5,6 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import img1 from '../../../assets/home/1.jpg';
 import img2 from '../../../assets/home/2.jpg';
 import img3 from '../../../assets/home/3.jpg';
+import './Banner.css'
 
 const Banner = () => {
     return (
@@ -22,19 +23,7 @@ const Banner = () => {
                 <img src={img3} />
 
             </div>
-            {/*
-            <div>
-                <img src={img4} />
 
-            </div>
-            <div>
-                <img src={img5} />
-
-            </div>
-            <div>
-                <img src={img6} />
-
-            </div> */}
         </Carousel>
     );
 };

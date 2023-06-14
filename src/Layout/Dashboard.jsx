@@ -4,6 +4,8 @@ import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 import { AuthContext } from "../providers/AuthProvider";
 import { useContext } from "react";
+import useBookedClass from "../hooks/useBookedClass";
+import useEnrolledClass from "../hooks/useEnrolledClass";
 
 
 
@@ -12,6 +14,9 @@ const Dashboard = () => {
     // const isAdmin = true;
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
+    const [bookedClass] = useBookedClass();
+    const [enrolledClasses] = useEnrolledClass();
+
     const isUser = !isAdmin && !isInstructor;
 
     const handleLogOut = () => {
@@ -98,12 +103,12 @@ const Dashboard = () => {
                             </li>
                             <li>
                                 <NavLink to="/dashboard/mybookedclasses">
-                                    My booked classes
+                                    My booked classes <span className="indicator-item badge badge-primary">{bookedClass.length}</span>
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/myenrolledclasses">
-                                    My Enrolled Classes
+                                    My Enrolled Classes <span className="indicator-item badge badge-primary">{enrolledClasses.length}</span>
                                 </NavLink>
                             </li>
                         </>
