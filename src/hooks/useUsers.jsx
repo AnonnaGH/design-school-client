@@ -6,7 +6,7 @@ const useUsers = () => {
         queryKey: ['users'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/users');
+                const res = await fetch('https://design-school-server.vercel.app/users');
                 if (!res.ok) {
                     throw new Error('Failed to fetch users');
                 }

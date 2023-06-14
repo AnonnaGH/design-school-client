@@ -45,7 +45,7 @@ const router = createBrowserRouter([
             {
                 path: 'allclasses',
                 element: <AllClasses></AllClasses>,
-                loader: () => fetch('http://localhost:5000/classes')
+                loader: () => fetch('https://design-school-server.vercel.app/classes')
             },
 
         ]
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
             {
                 path: 'paymenthistory',
                 element: <AdminRoute><PaymentHistory></PaymentHistory></AdminRoute>,
-                loader: () => fetch('http://localhost:5000/payments')
+                loader: () => fetch('https://design-school-server.vercel.app/payments')
             },
             {
                 path: 'myenrolledclasses',

@@ -28,7 +28,7 @@ const ClassCard = ({ singleClass }) => {
         console.log(singleClass)
         if (user && user.email) {
             const bookedClass = { bookedClassId: _id, name, user_name: user.displayName, image, instructor, category, price, email, user_email: user.email }
-            fetch('http://localhost:5000/booked', {
+            fetch('https://design-school-server.vercel.app/booked', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
