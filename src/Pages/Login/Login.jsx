@@ -11,7 +11,7 @@ import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { signIn } = useContext(AuthContext);
-
+    const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -40,7 +40,16 @@ const Login = () => {
                 });
                 navigate(from, { replace: true });
             })
-            .catch((error) => console.log(error));
+            .catch((err) => {
+                setError(err.message);
+                if (err.code === 'auth/user-not-found') {
+                    Swal.fire('Error!', 'User does not exist.', 'error');
+                } else if (err.code === 'auth/wrong-password') {
+                    Swal.fire('Error!', 'Invalid password.', 'error');
+                } else {
+                    Swal.fire('Error!', 'Login failed.', 'error');
+                }
+            });
     };
 
 
@@ -56,10 +65,10 @@ const Login = () => {
                 <title>Online Graphic School | Login</title>
             </Helmet>
 
-            <div className="hero-content flex-col lg:flex-row-reverse m-8 ">
+            <div className="hero-content flex-col mx-auto lg:flex-row-reverse m-8 ">
 
 
-                <div className="  w-full md:w-3/4 p-8 shadow-xl  bg-[#DCDFF0]">
+                <div className="  w-full md:w-3/4 p-8 shadow-xl bg-[#DCDFF0]">
                     <h1 className="text-5xl text-center">Login</h1>
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">

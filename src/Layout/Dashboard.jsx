@@ -119,7 +119,7 @@ const Dashboard = () => {
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
                     <li><NavLink to="/allclasses"> All Classes</NavLink></li>
-                    <li><NavLink to="/instructors">Instructors</NavLink></li>
+                    <li><NavLink to="/allinstructors">Instructors</NavLink></li>
                     <li>
                         <Link onClick={handleLogOut} >  Logout</Link>
                     </li>

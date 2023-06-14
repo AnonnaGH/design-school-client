@@ -1,10 +1,18 @@
 
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
+
+
 
 const TopInstructorCard = ({ instructor }) => {
+    useEffect(() => {
+        Aos.init({ duration: 1500 });
+    }, [])
     const { name, email, totalPayments, image } = instructor;
 
     return (
-        <div className="flex flex-col justify-center  px-5 ">
+        <div className="flex flex-col justify-center  px-5 " data-aos="zoom-in-down">
             <div className="card card-compact py-10  shadow-xl rounded-3xl  z-10 bg-[#2B2669]  pb-10">
                 <figure className="hover:scale-110 transition-transform ">
                     <div className="h-52 rounded-full "> <img className="h-48 mb-10 rounded-full object-cover" src={image} alt="Instructor" /></div>

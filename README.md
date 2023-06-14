@@ -1,4 +1,4 @@
-# Drapgic design Webside
+# Graphic design School Website
 
 Live Link : https://graphic-design-school.web.app/
 

@@ -20,7 +20,7 @@ const TopInstructors = () => {
     return (
         <div className="max-w-screen-xl mx-auto my-40">
             <div>
-                <h2 className='text-3xl my-10 text-center'>Top Instructors</h2>
+                <h2 className='text-5xl text-center font-bold mb-10'>Top Instructors</h2>
                 <div className='grid md:grid-cols-3 gap-4'>
                     {topInstructors?.map((instructor, index) => (
                         <TopInstructorCard

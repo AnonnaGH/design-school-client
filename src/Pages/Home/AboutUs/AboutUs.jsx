@@ -1,9 +1,22 @@
 
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
+
+
+
+
+
 
 const AboutUs = () => {
+
+    useEffect(() => {
+        Aos.init({ duration: 1500 });
+    }, [])
+
     return (
         <div className="max-w-screen-xl mx-auto">
-            <div className="flex flex-col md:flex-row">
+            <div className="flex flex-col md:flex-row" data-aos="fade-right">
 
                 <div className="md:w-1/2">
                     <img src="https://i.ibb.co/8DpyGsR/5.jpg" alt="Image" className="w-full" />
